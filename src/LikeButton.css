@@ -1,0 +1,60 @@
+* {
+  /*초기화*/
+  margin: 0;
+  padding: 0;
+  --c: #ff6b81;
+}
+
+svg {
+  width: 1.2rem;
+  /*상대포지션*/
+  position: relative;
+  z-index: 10;
+  shape-rendering: geometricPrecision;
+}
+
+#heart {
+  /*stroke속성은 선, 문자, 원소등의 테두리에대해서 디자인 가능*/
+  stroke: var(--c);
+  /*선의 넓이*/
+  stroke-width: 40px;
+  /*선을 점선으로 설정, 점선의 길이 설정*/
+  stroke-dasharray: 3000;
+  /*displacement of line*/
+  stroke-dashoffset: 3000;
+  /*끝점은 둥글게*/
+  stroke-linecap: round;
+}
+
+.like-container {
+  display: flex;
+  justify-content: center;
+  /* border: #eee 1px solid; */
+  padding: 0.3rem;
+  border-radius: 6px;
+  width: fit-content;
+  min-width: 3rem;
+}
+
+span {
+  display: block;
+  width: 0.3rem;
+  height: 0.3rem;
+  background-color: transparent;
+  border-radius: 50%;
+  /*절대적 포지션: center*/
+  position: relative;
+  right: 0.65rem;
+  top: 0.55rem;
+  transform: translate(-50%, -50%) scale(0);
+  /*각 방향의 쉐도우 설정*/
+  /*var함수로 쉐도우 컬러 설정*/
+  box-shadow: 0 -2rem 0 var(--c), 0 2rem 0 var(--c), -2rem 0 0 var(--c),
+    2rem 0 0 var(--c), -1.5rem -1.5rem 0 var(--c), 1.5rem -1.5rem 0 var(--c),
+    1.5rem 1.5rem 0 var(--c), -1.5rem 1.5rem 0 var(--c);
+}
+
+label {
+  /*마우스 heart로 이동시 마우스 커서변동*/
+  cursor: pointer;
+}
